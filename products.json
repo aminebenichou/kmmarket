@@ -1,0 +1,103 @@
+[
+    {
+      "title": "Wireless Mouse",
+      "description": "Ergonomic wireless mouse with adjustable DPI settings.",
+      "price": 19.99
+    },
+    {
+      "title": "Bluetooth Headphones",
+      "description": "Noise-cancelling over-ear Bluetooth headphones with long battery life.",
+      "price": 49.99
+    },
+    {
+      "title": "Gaming Keyboard",
+      "description": "Mechanical RGB keyboard with customizable lighting and switches.",
+      "price": 59.99
+    },
+    {
+      "title": "Smartphone Stand",
+      "description": "Adjustable aluminum stand compatible with most smartphones.",
+      "price": 12.99
+    },
+    {
+      "title": "USB-C Hub",
+      "description": "6-in-1 USB-C hub with HDMI, USB 3.0, SD card reader, and more.",
+      "price": 29.99
+    },
+    {
+      "title": "Fitness Tracker",
+      "description": "Waterproof fitness tracker with heart rate and sleep monitoring.",
+      "price": 39.99
+    },
+    {
+      "title": "Portable Charger",
+      "description": "10000mAh slim power bank with fast charging support.",
+      "price": 24.99
+    },
+    {
+      "title": "LED Desk Lamp",
+      "description": "Dimmable LED lamp with USB charging port and touch control.",
+      "price": 27.50
+    },
+    {
+      "title": "Laptop Cooling Pad",
+      "description": "Silent cooling pad with 5 fans and adjustable height.",
+      "price": 22.95
+    },
+    {
+      "title": "4K HDMI Cable",
+      "description": "Durable 6ft HDMI cable supporting 4K at 60Hz.",
+      "price": 8.99
+    },
+    {
+      "title": "Webcam Cover",
+      "description": "Ultra-thin webcam privacy cover for laptops and desktops.",
+      "price": 5.49
+    },
+    {
+      "title": "Wireless Charger",
+      "description": "Fast wireless charging pad compatible with Qi-enabled devices.",
+      "price": 18.99
+    },
+    {
+      "title": "Noise Cancelling Earbuds",
+      "description": "True wireless earbuds with active noise cancellation.",
+      "price": 69.99
+    },
+    {
+      "title": "Laptop Sleeve",
+      "description": "Water-resistant laptop sleeve with shock-proof lining.",
+      "price": 15.49
+    },
+    {
+      "title": "Standing Desk Converter",
+      "description": "Height adjustable desk riser for ergonomic workspace setup.",
+      "price": 89.95
+    },
+    {
+      "title": "Digital Notepad",
+      "description": "LCD writing tablet for notes and drawings.",
+      "price": 16.75
+    },
+    {
+      "title": "Mini Projector",
+      "description": "Portable mini projector with HDMI and USB inputs.",
+      "price": 84.99
+    },
+    {
+      "title": "Wireless Presenter",
+      "description": "Slide clicker with laser pointer for presentations.",
+      "price": 14.99
+    },
+    {
+      "title": "Desk Organizer",
+      "description": "Multi-compartment organizer for office supplies.",
+      "price": 10.99
+    },
+    {
+      "title": "Smart Plug",
+      "description": "Wi-Fi enabled smart plug compatible with Alexa and Google Home.",
+      "price": 13.95
+    }
+  ]
+  

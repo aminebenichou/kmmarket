@@ -28,7 +28,7 @@ class Product(models.Model):
     title = models.CharField(max_length=150)
     description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    image = models.ImageField(upload_to='products', null=True,blank=True)
+    image = models.ImageField(upload_to='products', default="noimage.jpg", null=True, blank=True)
     seller = models.ForeignKey(Seller, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
@@ -45,3 +45,5 @@ class Order(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=150, default='pending')
+
+# DahliasInstitute2022

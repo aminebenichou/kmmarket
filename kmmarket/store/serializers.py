@@ -17,14 +17,14 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = '__all__'
-        depth = 1
+        
         # read_only_fields=['image']
 
 class SellerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Seller
         fields = '__all__'
-        depth = 1
+        
 
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:
