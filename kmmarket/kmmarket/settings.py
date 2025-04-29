@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from .securevars import db_password
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'store',
     'rest_framework',
+    "corsheaders",
+    'django_filters',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -50,7 +54,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
 
 ROOT_URLCONF = 'kmmarket.urls'
 
@@ -87,7 +102,9 @@ DATABASES = {
     }
 }
 
-
+CORS_ALLOWED_ORIGINS=[
+    'http://localhost:3000'
+]
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -123,7 +140,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+MEDIA_URL = "/assets/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'assets')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
