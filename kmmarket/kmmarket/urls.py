@@ -26,14 +26,16 @@ router = DefaultRouter()
 router.register("products", ProductViewSet)
 router.register("catgeories", CategoryViewSet) 
 router.register("seller", SellerViewSet)
+router.register("client", ClientViewSet)
 router.register("ratings", RatingViewSet)
 router.register("orders", OrderViewSet)
 router.register("signUp", UserViewset)
-
+router.register("tracking", TrackingViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', views.obtain_auth_token),
     path('userInfo', getUserInfo),
+    # path('get-tracking/', getTracking),
     path("", include(router.urls))
 ]
 

@@ -41,9 +41,11 @@ class Ratings(models.Model):
 
 class Order(models.Model):
     products = models.ManyToManyField(Product, related_name='orders')
-    order_number = models.CharField(max_length=15, default=generate_order_id(), editable=False, unique=True)
+    order_number = models.CharField(max_length=15, default=generate_order_id(), editable=False, unique=True, null=True, blank=True)
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    date = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=150, default='pending')
+    date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    status = models.CharField(max_length=150, default='pending', null=True, blank=True)
 
-# DahliasInstitute2022
+class Tracking(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    status = models.CharField(max_length=150)
