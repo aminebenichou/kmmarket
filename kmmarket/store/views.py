@@ -26,10 +26,10 @@ class ProductViewSet(viewsets.ModelViewSet):
         try:
             print(self.request.data)
             seller = Seller.objects.get(user=self.request.user)
-            category = Category.objects.get(id=int(self.request.data['category'][0]))
+            category = Category.objects.get(id=int(self.request.data['category']))
             title = self.request.data['title']
             description = self.request.data['description']
-            price = int(self.request.data['price'][0])
+            price = int(self.request.data['price'])
             self.queryset.create(title=title, price=price, description=description, seller=seller, category=category)
             return Response({'message': 'created successfully'}, status=status.HTTP_201_CREATED)
         except NameError:
