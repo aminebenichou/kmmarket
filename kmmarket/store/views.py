@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view, action
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.authtoken.models import Token
 from rest_framework.exceptions import ValidationError
+from rest_framework.parsers import MultiPartParser, FormParser
 # Create your views here.
 
 def createUser(data):
@@ -21,6 +22,7 @@ def createUser(data):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    parser_classes = (MultiPartParser, FormParser)
 
     def create(self, request, *args, **kwargs):
         try:
@@ -30,7 +32,8 @@ class ProductViewSet(viewsets.ModelViewSet):
             title = self.request.data['title']
             description = self.request.data['description']
             price = int(self.request.data['price'])
-            self.queryset.create(title=title, price=price, description=description, seller=seller, category=category)
+            image= self.request.FILES['image']
+            self.queryset.create(title=title, price=price, description=description, seller=seller, category=category, image=image)
             return Response({'message': 'created successfully'}, status=status.HTTP_201_CREATED)
         except NameError:
             print(NameError)
@@ -130,11 +133,12 @@ class OrderViewSet(viewsets.ModelViewSet):
     
     def create(self, request, *args, **kwargs):
         print("POST DATA:", request.data)
-        print("POST DATA:", request.data['products'][0])
+        # print("POST DATA:", request.data['products'][0])
         try:
             client= Client.objects.get(user=request.user.id)
-            order = self.queryset.create(client=client)
-            order.products.set(request.data['products'])
+            product = Product.objects.get(id=request.data['products'])
+            order = self.queryset.create(client=client, products=product)
+            
             return Response({'message':'order created'}, status=status.HTTP_201_CREATED)
         except NameError:
             return Response({'message':NameError}, status=status.HTTP_400_BAD_REQUEST)

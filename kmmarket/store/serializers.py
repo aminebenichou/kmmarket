@@ -87,6 +87,6 @@ class OrderSerializer(serializers.ModelSerializer):
 
 
             # Serialize products with nested data
-            rep['products'] = ProductSerializer(instance.products.all(), many=True).data
+            rep['products'] = ProductSerializer(instance.products, many=False).data
 
         return rep
